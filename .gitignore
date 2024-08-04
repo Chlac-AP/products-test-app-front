@@ -1,0 +1,10 @@
+
+
+# npm packages.
+node_modules
+
+# Cache created with the Angular CLI.
+.angular/
+
+# Editor config
+.editorconfig
