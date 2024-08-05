@@ -35,45 +35,42 @@ export class ProductsService {
   }
 
   addProducts(products: Partial<Product>[]): Observable<any> {
-    // TODO : Replace of(EMPTY) with post request, and receive added products in response
     return this.http.post<any>(`${environment.apiUrl}/products`, products).pipe(
       take(1),
       tap(
-        res => {
-
-          this._products.next(this._products.getValue().concat(products.map(p => ({
-            ...p,
-            id: this.createId(),
-            code: this.createCode(),
-            inventoryStatus: p.quantity > 0 ? p.quantity > 10 ? 'INSTOCK' : 'LOWSTOCK' : 'OUTOFSTOCK',
-          }) as Product
-          )));
-
+        {
+          next: (created_products: Product[]) => {
+            this._products.next(this._products.getValue().concat(created_products));
+          }
         }
       ));
   }
 
   updateProducts(products_to_update: Product[]): Observable<any> {
-    // TODO : Replace of(EMPTY) with update request, and receive updated products in response
+    // TODO : receive updated products in response #flemme
     return this.http.put<any>(`${environment.apiUrl}/products`, products_to_update).pipe(
       take(1),
       tap(
-        res => {
-          const products = this._products.getValue()
-          products_to_update.forEach(p => products[this.findIndexById(p.id)] = p)
-          this._products.next([...products])
+        {
+          next: res => {
+            const products = this._products.getValue()
+            products_to_update.forEach(p => products[this.findIndexById(p.id)] = p)
+            this._products.next([...products])
+          }
         }
       ));
   }
 
 
   deleteProducts(products: Product[]): Observable<any> {
-    // TODO : Replace of(EMPTY) with delete request, and maybe receive updated product list in response
+    // TODO : maybe receive updated product list in response
     return this.http.delete<any>(`${environment.apiUrl}/products`, { body: products }).pipe(
       take(1),
       tap(
-        res => {
-          this._products.next(this._products.getValue().filter(p => !products.find(_p => _p.id == p.id)));
+        {
+          next: res => {
+            this._products.next(this._products.getValue().filter(p => !products.find(_p => _p.id == p.id)));
+          }
         }
       )
     )
