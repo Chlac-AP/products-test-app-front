@@ -1406,6 +1406,11 @@
     width: 20px;
     height: 20px;
   }
+  
+  p-radiobutton + label {
+    margin-left: 0.75rem;
+  }
+  
   .p-radiobutton .p-radiobutton-box {
     border: 2px solid #757575;
     background: var(--primary-bg-color-light);
@@ -2298,7 +2303,7 @@
     text-align: left;
     padding: 0.75rem 0.75rem;
     border: 1px solid #e4e4e4;
-    border-width: 0 0 1px 0;
+    border-width: 1px;
     font-weight: 500;
     color: var(--primary-font-color);
     background: var(--primary-bg-color-light);
@@ -2360,7 +2365,7 @@
   .p-datatable .p-datatable-tbody > tr > td {
     text-align: left;
     border: 1px solid #e4e4e4;
-    border-width: 0 0 1px 0;
+    border-width: 1px;
     padding: 0.75rem 0.75rem;
   }
   .p-datatable .p-datatable-tbody > tr > td .p-row-toggler,
@@ -2644,6 +2649,10 @@
   }
   .p-column-filter-overlay-menu .p-column-filter-buttonbar {
     padding: 0.75rem;
+  }
+
+  .p-column-filter {
+    width: 100%;
   }
   
   .fc {
@@ -3690,6 +3699,13 @@
   }
   .p-divider.p-divider-vertical .p-divider-content {
     padding: 0.5rem 0;
+  }
+
+  .p-field {
+    margin-bottom: 1rem;
+    label + * {
+      margin-top: 0.5rem;
+    }
   }
   
   .p-fieldset {

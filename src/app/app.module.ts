@@ -9,6 +9,8 @@ import { AppComponent } from 'app/app.component';
 import { BaseModule } from 'app/base/base.module';
 import { SharedModule } from 'app/shared/shared.module';
 
+import { ProductsModule } from './products/products.module';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -17,7 +19,8 @@ import { SharedModule } from 'app/shared/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    BaseModule
+    BaseModule,
+    ProductsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'en' }

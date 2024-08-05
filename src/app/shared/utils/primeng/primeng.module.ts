@@ -5,6 +5,7 @@ import { AutoCompleteModule } from "primeng/autocomplete";
 import { BadgeModule } from "primeng/badge";
 import { BreadcrumbModule } from "primeng/breadcrumb";
 import { ButtonModule } from "primeng/button";
+import { RadioButtonModule } from "primeng/radiobutton";
 import { CalendarModule } from "primeng/calendar";
 import { CardModule } from "primeng/card";
 import { CheckboxModule } from "primeng/checkbox";
@@ -38,6 +39,8 @@ import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from "primeng/tooltip";
 
+import { ConfirmationService } from 'primeng/api';
+
 
 @NgModule({
   imports: [
@@ -45,6 +48,7 @@ import { TooltipModule } from "primeng/tooltip";
     TableModule,
     PaginatorModule,
     ButtonModule,
+    RadioButtonModule,
     DialogModule,
     InputTextModule,
     ListboxModule,
@@ -83,6 +87,7 @@ import { TooltipModule } from "primeng/tooltip";
     TableModule,
     PaginatorModule,
     ButtonModule,
+    RadioButtonModule,
     DialogModule,
     InputTextModule,
     ListboxModule,
@@ -119,7 +124,8 @@ import { TooltipModule } from "primeng/tooltip";
   ],
   providers: [
     DialogService,
-    MessageService
+    MessageService,
+    ConfirmationService
   ],
 })
 export class PrimeNGModule { }

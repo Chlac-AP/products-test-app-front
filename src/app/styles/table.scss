@@ -10,9 +10,9 @@
     td .cell-action {
       visibility: hidden;
     }
-    // &:nth-child(odd) {
-    //   background-color: transparent;
-    // }
+    &:nth-child(even) {
+      background-color: transparent;
+    }
     &:hover {
       td .cell-action {
         visibility: visible;
@@ -47,6 +47,12 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+  }
+}
+
+.p-toolbar {
+  .p-button {
+    margin: 5px;
   }
 }
 

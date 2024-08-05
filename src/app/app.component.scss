@@ -5,3 +5,21 @@
     width: 100%;
     z-index: 1;
 }
+
+:host ::ng-deep {
+    .app-container {
+        router-outlet + * {
+            .page {
+                padding-left: 60px;
+            }
+        }
+
+        &.sidenav-pinned {
+            router-outlet + * {
+                .page {
+                    padding-left: 260px;
+                }
+            }
+        }
+    }
+}

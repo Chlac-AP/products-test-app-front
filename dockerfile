@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
 COPY package*.json ./
-RUN npm i -no-progress --omit=optional --loglevel=error && npm i -g @angular/cli --no-progress --loglevel=error
+RUN npm i -no-progress --omit=optional --loglevel=error && npm i -g @angular/cli@14.2.9 --no-progress --loglevel=error
 # Bundle app source
 # COPY . /usr/src/app
 # EXPOSE 4200 49153
